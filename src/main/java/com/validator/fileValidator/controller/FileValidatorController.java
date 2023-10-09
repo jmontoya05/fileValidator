@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("api/v1")
 public class FileValidatorController {
 
-    private CSVValidatorService csvValidatorService;
-    private XLSXValidatorService xlsxValidatorService;
+    private final CSVValidatorService csvValidatorService;
+    private final XLSXValidatorService xlsxValidatorService;
     @Autowired
     public FileValidatorController(CSVValidatorService csvValidatorService, XLSXValidatorService xlsxValidatorService) {
         this.csvValidatorService = csvValidatorService;
@@ -24,7 +24,7 @@ public class FileValidatorController {
 
     @PostMapping("/csv")
     public boolean validateCSV(@RequestBody Person person) {
-        return this.csvValidatorService.validateCSV(person);
+            return this.csvValidatorService.validateCSV(person);
     }
 
     @PostMapping("/xlsx")
