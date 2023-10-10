@@ -52,8 +52,6 @@ public class CSVValidatorService {
             Date minDate = dateFormat.parse("1980-01-01");
             return date.after(minDate);
         } catch (ParseException e) {
-            System.out.println("Fecha sin formato");
-            //Pendiente exepción
             return false;
         }
     }
